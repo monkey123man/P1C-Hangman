@@ -15,6 +15,19 @@ public class Person extends Actor
     public void act() 
     {
         // Add your action code here.
-        
+        int x = getX();
+        int y = getY();
+        if (Greenfoot.isKeyDown("D")){
+        setLocation (x + 5, y);
+        }
+        if (Greenfoot.isKeyDown("S")){
+        setLocation (x, y + 5);
+        }
+        if (Greenfoot.isKeyDown("A")){
+        setLocation (x - 5, y);
+        }
+        if (Greenfoot.isKeyDown("W")){
+        setLocation (x, y - 5);
+        }
     }
 }
