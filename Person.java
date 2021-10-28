@@ -14,7 +14,7 @@ public class Person extends Actor
     {
         for(int i = 0; i <=6; i++)
         {
-            personLives[i] = new GreenfootImage("images/person/person" + i);
+            personLives[i] = new GreenfootImage("images/person" + i);
         }
     }
     /**
