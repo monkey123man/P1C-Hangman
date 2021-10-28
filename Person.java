@@ -14,7 +14,7 @@ public class Person extends Actor
     {
         for(int i = 0; i <=6; i++)
         {
-            personLives[i] = new GreenfootImage("images/person" + i +".png");
+            personLives[i] = new GreenfootImage("images/person" + i + ".png");
         }
     }
     /**
@@ -24,7 +24,6 @@ public class Person extends Actor
     public void act() 
     {
         // Add your action code here.
-        move(1);
         
         MyWorld world = new MyWorld();
         setImage(personLives[world.health]);
