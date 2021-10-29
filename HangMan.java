@@ -8,10 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HangMan extends Actor
 {
-    GreenfootImage[] lives = new GreenfootImage[7];
+    GreenfootImage[] lives;
 
     public HangMan()
     {
+        lives  = new GreenfootImage[7];
         for(int i = 0; i <=6; i++)
         {
             lives[i] = new GreenfootImage("images/person" + i + ".png");
