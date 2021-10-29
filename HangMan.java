@@ -27,5 +27,6 @@ public class HangMan extends Actor
         
         MyWorld world = new MyWorld();
         setImage(lives[world.health]);
+        
     }
 }
