@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class MyWorld extends World
 {
-    public int health = 0;
+    public static int health = 0;
     public int letterx = 675;
     public int lettery = 115;
     ArrayList<String> letterarray = new ArrayList<String>();
@@ -19,7 +19,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 600, 1); 
+        super(1000, 700, 1); 
 
         HangMan guy = new HangMan();
         addObject(guy, 310, 190);
@@ -419,6 +419,10 @@ public class MyWorld extends World
                 letterarray.add("Z");
                 health++;   
             }
+        }
+        if(health > 6)
+        {
+            
         }
     }
 }

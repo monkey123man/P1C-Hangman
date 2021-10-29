@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class HangMan extends Actor
 {
     GreenfootImage[] lives;
-
     public HangMan()
     {
         lives  = new GreenfootImage[7];
@@ -25,7 +24,6 @@ public class HangMan extends Actor
     public void act() 
     {
         // Add your action code here.
-        
         MyWorld world = new MyWorld();
         setImage(lives[world.health]);
     }
