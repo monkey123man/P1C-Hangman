@@ -8,10 +8,13 @@ import java.util.ArrayList;
  */
 public class MyWorld extends World
 {
-    public static int health = 0;
+    public int health = 0;
     public int letterx = 675;
     public int lettery = 115;
+    public ArrayList<String> allWords;
     ArrayList<String> letterarray = new ArrayList<String>();
+    public int max = 1000;
+    public int min = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,16 +23,26 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
-
+        allWords = new ArrayList<String>();
+        
+        try
+        {
+            Words.readInto(allWords);
+        }
+        catch(Exception e)
+        {
+            
+        }
         HangMan guy = new HangMan();
         addObject(guy, 310, 190);
-
         Label guess = new Label("Guesses!", 85);
         addObject(guess, 820, 50);
-
     }
-
     public void act(){
+        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
+        keypresses();
+    }
+    public void keypresses(){
         if (Greenfoot.isKeyDown("A")){
             int counter = 0;
             for (int i = 0; i < letterarray.size(); i ++){
