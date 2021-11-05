@@ -15,6 +15,7 @@ public class MyWorld extends World
     ArrayList<String> letterarray = new ArrayList<String>();
     public int max = 1000;
     public int min = 0;
+    HashMap<String, Integer> letters = new HashMap<String, Integer>();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -22,9 +23,8 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1000, 700, 1); 
+        super(1000, 700, 1);
         allWords = new ArrayList<String>();
-        
         try
         {
             Words.readInto(allWords);
@@ -37,9 +37,14 @@ public class MyWorld extends World
         addObject(guy, 310, 190);
         Label guess = new Label("Guesses!", 85);
         addObject(guess, 820, 50);
+        int randomint = (int)Math.floor(Math.random()*(max-min+1)+min);
+        String randomword = allWords.get(randomint);
+        for (int i = 0; i < randomword.length(); i++){
+            char cur = randomword.charAt(i);
+            String stringcurs = String.valueOf(cur);
+        }
     }
     public void act(){
-        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
         keypresses();
     }
     public void keypresses(){
@@ -435,7 +440,8 @@ public class MyWorld extends World
         }
         if(health > 6)
         {
-            
+            TitleScreen title = new TitleScreen();
+            Greenfoot.setWorld(title);
         }
     }
 }
