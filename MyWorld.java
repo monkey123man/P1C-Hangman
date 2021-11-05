@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
+import java.util.*;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -15,6 +16,8 @@ public class MyWorld extends World
     ArrayList<String> letterarray = new ArrayList<String>();
     public int max = 1000;
     public int min = 0;
+    public int underx = 35;
+    public int undery = 400;
     HashMap<String, Integer> letters = new HashMap<String, Integer>();
     /**
      * Constructor for objects of class MyWorld.
@@ -41,7 +44,30 @@ public class MyWorld extends World
         String randomword = allWords.get(randomint);
         for (int i = 0; i < randomword.length(); i++){
             char cur = randomword.charAt(i);
-            String stringcurs = String.valueOf(cur);
+            if (Character.isLetter(cur)){
+                String stringcurs = String.valueOf(cur);
+                if(letters.containsKey(stringcurs)){
+                    int currentkeys = letters.get(stringcurs);
+                    currentkeys++;
+                    letters.put(stringcurs, currentkeys);
+                }
+                else{
+                    letters.put(stringcurs, 1);
+                }
+                underx = 35 + i * 75;
+                Label underline = new Label("_", 85);
+                if (underx < 1000){
+                   addObject(underline, underx, 400);
+                }
+            }
+            else{
+                String stringcurs = String.valueOf(cur);
+                underx = 35 + i * 75;
+                Label otherchar = new Label(stringcurs, 85);
+                 if (underx < 1000){
+                   addObject(otherchar, underx, 400);
+                }
+            }
         }
     }
     public void act(){
