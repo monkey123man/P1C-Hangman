@@ -81,8 +81,8 @@ public class MyWorld extends World
         //Runs the keypresses method
         keypresses();
         if (letters.isEmpty()){
-            TitleScreen title = new TitleScreen();
-            Greenfoot.setWorld(title);
+            EndScreen endscreen = new EndScreen();
+            Greenfoot.setWorld(endscreen);
         }
     }
     //Takes in keypresses and registers them if they are correct or not
@@ -923,8 +923,8 @@ public class MyWorld extends World
         }
         if(health == 6)
         {
-            TitleScreen title = new TitleScreen();
-            Greenfoot.setWorld(title);
+            EndScreen endscreen = new EndScreen();
+            Greenfoot.setWorld(endscreen);
         }
     }
 }
