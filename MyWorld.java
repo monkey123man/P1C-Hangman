@@ -115,8 +115,11 @@ public class MyWorld extends World
         //Runs the keyPresses method
         keyPresses();
         if (letters.isEmpty()){
-            TitleScreen titlescreen = new TitleScreen();
-            Greenfoot.setWorld(titlescreen);
+            //TitleScreen titlescreen = new TitleScreen();
+            //Greenfoot.setWorld(titlescreen);
+            loss = false;
+            wordToGuess = randomWord;
+            Greenfoot.setWorld(new EndScreen());
         }
     }
     //Takes in keyPresses and registers them if they are correct or not
