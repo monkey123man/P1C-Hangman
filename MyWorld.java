@@ -82,8 +82,8 @@ public class MyWorld extends World
         //Runs the keypresses method
         keypresses();
         if (letters.isEmpty()){
-            EndScreen endscreen = new EndScreen();
-            Greenfoot.setWorld(endscreen);
+            TitleScreen titlescreen = new TitleScreen();
+            Greenfoot.setWorld(titlescreen);
         }
     }
     //Takes in keypresses and registers them if they are correct or not
@@ -929,7 +929,7 @@ public class MyWorld extends World
             setBackground("images/bluebg.png");
             Label answer = new Label(randomword, 85);
             addObject(answer, 500, 200);
-            Label end = new Label("Press space to restart", 85);
+             Label end = new Label("Press space to restart", 85);
             addObject(end, 500, 400);
             if(Greenfoot.isKeyDown("space"))
             {
