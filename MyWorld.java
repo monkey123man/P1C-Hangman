@@ -1,6 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 import java.util.*;
+import java.util.List;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -923,8 +924,18 @@ public class MyWorld extends World
         }
         if(health == 6)
         {
-            EndScreen endscreen = new EndScreen();
-            Greenfoot.setWorld(endscreen);
+            List objects = getObjects(null);
+            removeObjects(objects);
+            setBackground("images/bluebg.png");
+            Label answer = new Label(randomword, 85);
+            addObject(answer, 500, 200);
+            Label end = new Label("Press space to restart", 85);
+            addObject(end, 500, 400);
+            if(Greenfoot.isKeyDown("space"))
+            {
+                TitleScreen titlescreen = new TitleScreen();
+                Greenfoot.setWorld(titlescreen);
+            }
         }
     }
 }
