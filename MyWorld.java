@@ -110,6 +110,8 @@ public class MyWorld extends World
                 }
             }
         }
+        
+
     }
 
     public void act(){
@@ -162,6 +164,15 @@ public class MyWorld extends World
                         }
                     }
                     Label newGuess = new Label(currentLetter, 60);
+                    if(correctBool)
+                    {
+                        newGuess.setFillColor(Color.GREEN);
+                    }
+                    else
+                    {
+                        newGuess.setFillColor(Color.RED);
+                    }
+                    
                     if (numGuesses > 5){
                         guessesHeight++;
                         letterY = 115 + 50 * guessesHeight;

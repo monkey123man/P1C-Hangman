@@ -11,6 +11,7 @@ public class EndScreen extends World
     GreenfootImage lose;
     GreenfootImage win;
     Label answer;
+    Label start;
     /**
      * Constructor for objects of class EndScreen.
      * 
@@ -23,15 +24,17 @@ public class EndScreen extends World
         lose = new GreenfootImage("LoseScreen.png");
         win = new GreenfootImage("WinScreen.png");
 
-        Button restart = new Button();
+        PlayButton restart = new PlayButton();
         addObject(restart, 500, 350);
         
         Label title = new Label("Press <T> to return to Title Screen!" , 50);
         addObject(title, 500, 500);
         
-        Label start = new Label("Click anywhere to play again!", 80);
-        start.setLineColor(Color.BLUE);
+        start = new Label("Click anywhere to begin!", 80);
+        start.setLineColor(Color.CYAN);
         addObject(start, 500, 400);
+        
+        setPaintOrder(PlayButton.class, Label.class);
     }
 
     public void act()
@@ -40,17 +43,20 @@ public class EndScreen extends World
         if(game.loss)
         {
             setBackground(lose);
-            answer = new Label("The word was: " + game.wordToGuess, 70);
+            answer = new Label("The word was: " + game.wordToGuess + "!", 70);
             addObject(answer, 500, 320);
         }
         else
         {
             setBackground(win);
+            answer = new Label("You guessed " + game.wordToGuess + " correctly!", 60);
+            addObject(answer, 500, 320);
         }
         
         game.health = 0;
         if(Greenfoot.isKeyDown("T"))
         {
+            
             Greenfoot.setWorld(new TitleScreen());
         }
         
