@@ -35,7 +35,7 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
-        alphabet.add("A");
+        alphabet.add("A"); //Adds the alphabet to the arraylist
         alphabet.add("B");
         alphabet.add("C");
         alphabet.add("D");
@@ -79,28 +79,29 @@ public class MyWorld extends World
         //allWords.get(randomInt);
         //Massive for-loop grabs each character in the word, converts it to a string, and adds it to the hashmap. If it already exists in the hashmap,
         //it bumps the value by 1 in the hashmap and it adds an underscore.
-        //For characters that arent letters, it just puts whatever it is, ex. a hypen
+        //For characters that arent letters, it just puts whatever it is, ex. a hyphen
         //Everything in the arraylist is a single word so no need to implement multiword stuff (we need to add multiline anyways for the super long words
         //such as "father-in-law"
         for (int i = 0; i < randomWord.length(); i++){
-            char cur = randomWord.charAt(i);
+            char cur = randomWord.charAt(i); //Grabs each character
             if (Character.isLetter(cur)){
-                String stringCurs = String.valueOf(cur);
+                String stringCurs = String.valueOf(cur); //Converts character to string
                 if(letters.containsKey(stringCurs)){
-                    int currentKeys = letters.get(stringCurs);
+                    int currentKeys = letters.get(stringCurs); //Increases the the value appeared by 1 if it has already appeared
                     currentKeys++;
                     letters.put(stringCurs, currentKeys);
                 }
                 else{
-                    letters.put(stringCurs, 1);
+                    letters.put(stringCurs, 1); //If not appeared once, put it in the hashmap
                 }
-                underx = 35 + i * 55;
+                underx = 35 + i * 55; //Place an underscore per character
                 Label underline = new Label("_", 85);
                 if (underx < 1000){
                     addObject(underline, underx, 400);
                 }
             }
             else{
+                //This else is if the character in the word isn't a letter (ex. a hyphen)
                 String stringCurs = String.valueOf(cur);
                 underx = 35 + i * 55;
                 Label otherchar = new Label(stringCurs, 85);
@@ -139,15 +140,18 @@ public class MyWorld extends World
                     }
                 }
                 if (counter == 0 && health < 6){
+                    //Only works if letter has not been pressed and health is less than 6
                     for(int h = 0; h < randomWord.length(); h++){
-                        char currentChar = randomWord.charAt(h);
-                        String currentstring = String.valueOf(currentChar);
+                        //Cycle throughs the words looking at each character
+                        char currentChar = randomWord.charAt(h); //Grabs character from the word
+                        String currentstring = String.valueOf(currentChar); //Converts char to string
                         if(currentstring.equals(currentLowercaseLetter)){
-                            correctletterX = 35 + h * 55;
-                            Label correctGuess = new Label(currentLetter, 60);
-                            addObject(correctGuess, correctletterX, 400);
-                            int currentKeys = letters.get(currentLowercaseLetter);
-                            currentKeys--;
+                            //If the character grabbed at the instance is equivalent to the lowercase letter that we are looping with (ex.a, b, c)
+                            correctletterX = 35 + h * 55; //Grabs the position to place the corrrect letter in
+                            Label correctGuess = new Label(currentLetter, 60); //Makes a new label
+                            addObject(correctGuess, correctletterX, 400); //Adds the label
+                            int currentKeys = letters.get(currentLowercaseLetter); //Grabs the value tied to the letter key in the hashmap
+                            currentKeys--; //Subtracts the value by 1
                             if(currentKeys == 0){
                                 letters.remove(currentLowercaseLetter);
                             }
