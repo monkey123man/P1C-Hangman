@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
-    public static GreenfootSound bgm;
+
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -21,14 +21,16 @@ public class TitleScreen extends World
         start.setLineColor(Color.BLUE);
         addObject(start, 500, 550);
         
+        Label achieve = new Label("Press <A> to see unlocked Achievements!", 40);
+        addObject(achieve, 500, 600);
+        achieve.setLineColor(Color.RED);
+
         PlayButton begin = new PlayButton();
         addObject(begin, 500, 350);
-        
-        bgm = new GreenfootSound("sounds/bensound-funnysong.mp3");
+
     }
     public void act()
     {
-        
         if(Greenfoot.isKeyDown("space"))
         {
             MyWorld world = new MyWorld();
@@ -36,6 +38,10 @@ public class TitleScreen extends World
             Greenfoot.setWorld(world);
         }
         
+        if(Greenfoot.isKeyDown("A"))
+        {
+            Greenfoot.setWorld(new AchievementZone());
+        }
     }
-    
+
 }

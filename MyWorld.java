@@ -27,6 +27,16 @@ public class MyWorld extends World
     HashMap<String, Integer> letters = new HashMap<String, Integer>();
     public int numGuesses = 0;
     public int guessesHeight = 0;
+
+    public static boolean achievement1;
+    public static int numWins = 0;
+    public static boolean achievement2;
+    public static boolean a2Done;
+    public static int a2Count;
+    public static int a2Check;
+    public static boolean achievement3;
+    public static boolean a3Done;
+    public static int achievement3Count = 0;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -111,9 +121,9 @@ public class MyWorld extends World
             }
         }
         
-
+        a2Check = letters.size();
+        a2Count = 0;
     }
-
     public void act(){
         //Runs the keyPresses method
         keyPresses();
@@ -167,12 +177,20 @@ public class MyWorld extends World
                     if(correctBool)
                     {
                         newGuess.setFillColor(Color.GREEN);
+                        if(!a2Done)
+                        {
+                            a2Count++;
+                        }
                     }
                     else
                     {
                         newGuess.setFillColor(Color.RED);
+                        if(!a2Done)
+                        {
+                            a2Count--;
+                        }
                     }
-                    
+
                     if (numGuesses > 5){
                         guessesHeight++;
                         letterY = 115 + 50 * guessesHeight;
