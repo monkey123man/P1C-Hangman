@@ -15,21 +15,22 @@ import java.util.*;
 public class MyWorld extends World
 {
     public static int health = 0; // The main health variable which updates the hangman and also limits the players guesses
-    public int letterX = 675;
-    public int letterY = 115;
-    public ArrayList<String> allWords;
-    public ArrayList<String> alphabet = new ArrayList<String>();
+    public int letterX = 675; //Variable for base x coordinate of guess
+    public int letterY = 115; //Variable for base y coordinate for guess
+    public ArrayList<String> allWords; //Arraylist to hold the words in the wordlist
+    public ArrayList<String> alphabet = new ArrayList<String>(); //rraylist to hold the alphabet
     ArrayList<String> letterArray = new ArrayList<String>();//This arraylist holds the entered letters
-    public int max = 1000;
-    public int min = 0;
-    public int underx = 35;
-    public int undery = 400;
-    public int correctletterX = 35;
-    public String randomWord;
+    public int max = 2334; //Maximum word entry to find in the allWords arraylist (essentially the word count)
+    public int min = 0; //Minium word entry to find in the allWords arraylist
+    public int underx = 35; //Base x coordinates for underlines
+    public int undery = 400; //Base y coordinate for underlines
+    public int correctletterX = 35; //Base x coordinate for correct word placement
+    public String randomWord; //String for random word
     
-    HashMap<String, Integer> letters = new HashMap<String, Integer>();
-    public int numGuesses = 0;
-    public int guessesHeight = 0;
+    HashMap<String, Integer> letters = new HashMap<String, Integer>(); //Generate a hashmap that has the letters as a key
+    //and the number it appears as value
+    public int numGuesses = 0; //Integer to hold the number of guesses done so far
+    public int guessesHeight = 0; //Int to hold the the column number in guesses area so it doesnt overflow in one line
     
     public static boolean loss; // This boolean is true if the player loses and false if they win
     public static String wordToGuess =""; // A variable to access the word the player was guessing
