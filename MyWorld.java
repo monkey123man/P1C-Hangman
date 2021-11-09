@@ -32,11 +32,11 @@ public class MyWorld extends World
     public static int numWins = 0;
     public static boolean achievement2;
     public static boolean a2Done;
-    public static int a2Count;
-    public static int a2Check;
+    public static int achievement2Count = 0;
     public static boolean achievement3;
     public static boolean a3Done;
-    public static int achievement3Count = 0;
+    public static int healthCheck;
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -85,7 +85,7 @@ public class MyWorld extends World
         Label guess = new Label("Guesses!", 85);
         addObject(guess, 820, 50);
         int randomInt = (int)Math.floor(Math.random()*(max-min+1)+min); //This creates a random number
-        randomWord = allWords.get(randomInt); //Grabs a random word from the arraylist
+        randomWord = "hello";//allWords.get(randomInt); //Grabs a random word from the arraylist
         //allWords.get(randomInt);
         //Massive for-loop grabs each character in the word, converts it to a string, and adds it to the hashmap. If it already exists in the hashmap,
         //it bumps the value by 1 in the hashmap and it adds an underscore.
@@ -121,8 +121,6 @@ public class MyWorld extends World
             }
         }
         
-        a2Check = letters.size();
-        a2Count = 0;
     }
     public void act(){
         //Runs the keyPresses method
@@ -132,6 +130,7 @@ public class MyWorld extends World
             //Greenfoot.setWorld(titlescreen);
             loss = false;
             wordToGuess = randomWord;
+            healthCheck = health;
             Greenfoot.setWorld(new EndScreen());
         }
     }
@@ -177,18 +176,12 @@ public class MyWorld extends World
                     if(correctBool)
                     {
                         newGuess.setFillColor(Color.GREEN);
-                        if(!a2Done)
-                        {
-                            a2Count++;
-                        }
+                        
                     }
                     else
                     {
                         newGuess.setFillColor(Color.RED);
-                        if(!a2Done)
-                        {
-                            a2Count--;
-                        }
+                        
                     }
 
                     if (numGuesses > 5){
@@ -206,26 +199,11 @@ public class MyWorld extends World
                 }
             }
         }
-        // if(health == 6)
-        // {
-        // List objects = getObjects(null);
-        // removeObjects(objects);
-        // setBackground("images/bluebg.png");
-        // Label answer = new Label(randomWord, 85);
-        // addObject(answer, 500, 200);
-        // Label end = new Label("Press space to restart", 85);
-        // addObject(end, 500, 400);
-        // if(Greenfoot.isKeyDown("space"))
-        // {
-        // TitleScreen titlescreen = new TitleScreen();
-        // Greenfoot.setWorld(titlescreen);
-        // }
-        // }
-
         if(health == 6)
         {
             loss = true;
             wordToGuess = randomWord;
+            healthCheck = health;
             Greenfoot.setWorld(new EndScreen());
         }
     }

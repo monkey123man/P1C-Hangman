@@ -55,12 +55,12 @@ public class AchievementZone extends World
         if(MyWorld.achievement2)
         {
             medal2.medalUpdate(2);
-            m2.setValue("No Incorrect Guesses");
+            m2.setValue("3 Consecutive Wins");
         }
         if(MyWorld.achievement3)
         {
             medal3.medalUpdate(3);
-            m3.setValue("3 Consecutive Wins");
+            m3.setValue("No Incorrect Guesses");
         }
         
         if(Greenfoot.isKeyDown("T"))

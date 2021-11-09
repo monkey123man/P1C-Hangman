@@ -13,7 +13,7 @@ public class EndScreen extends World
     Label answer;
     Label start;
     int a1Check = 0;
-    int a3Check = 0;
+    int a2Check = 0;
     /**
      * Constructor for objects of class EndScreen.
      * 
@@ -32,13 +32,13 @@ public class EndScreen extends World
         Label title = new Label("Press <T> to return to Title Screen!" , 50);
         addObject(title, 500, 500);
 
-        start = new Label("Click anywhere to begin!", 80);
+        start = new Label("Click anywhere to play again!", 80);
         start.setLineColor(Color.CYAN);
         addObject(start, 500, 400);
 
         setPaintOrder(PlayButton.class, Label.class);
         a1Check = MyWorld.numWins;
-        a3Check = MyWorld.achievement3Count;
+        a2Check = MyWorld.achievement2Count;
     }
 
     public void act()
@@ -50,9 +50,9 @@ public class EndScreen extends World
             setBackground(lose);
             answer = new Label("The word was: " + game.wordToGuess + "!", 70);
             addObject(answer, 500, 320);
-            if(!game.a3Done)
+            if(!game.a2Done)
             {
-                MyWorld.achievement3Count = 0;
+                MyWorld.achievement2Count = 0;
             }
         }
         else
@@ -61,9 +61,9 @@ public class EndScreen extends World
             answer = new Label("You guessed " + game.wordToGuess + " correctly!", 60);
             addObject(answer, 500, 320);
             MyWorld.numWins = a1Check + 1;
-            if(!game.a3Done)
+            if(!game.a2Done)
             {
-                MyWorld.achievement3Count = a3Check + 1;
+                MyWorld.achievement2Count = a2Check + 1;
             }
         }
 
@@ -73,15 +73,15 @@ public class EndScreen extends World
         {
             game.achievement1 = true;
         }
-        if(game.a2Count == game.a2Check)
-        {
-            game.achievement2 = true;
-            game.a2Done = true;
-        }
-        if(game.achievement3Count >= 3)
+        if(game.healthCheck == 0 && !game.a3Done)
         {
             game.achievement3 = true;
             game.a3Done = true;
+        }
+        if(game.achievement2Count >= 3)
+        { 
+            game.achievement2 = true;
+            game.a2Done = true;
         }
 
         if(Greenfoot.isKeyDown("T"))
