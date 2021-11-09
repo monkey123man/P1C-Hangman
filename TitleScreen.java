@@ -26,6 +26,11 @@ public class TitleScreen extends World
         Label achieve = new Label("Press <A> to see unlocked Achievements!", 40);
         addObject(achieve, 500, 600);
         achieve.setLineColor(Color.RED);
+        
+        Label help = new Label("Press <I> to see Instructions!", 45);
+        addObject(help, 500, 640);
+        help.setLineColor(Color.GREEN);
+        help.setFillColor(Color.LIGHT_GRAY);
 
         PlayButton begin = new PlayButton();
         addObject(begin, 500, 350);
@@ -43,6 +48,11 @@ public class TitleScreen extends World
         if(Greenfoot.isKeyDown("A")) // Lets player go see their achievements
         {
             Greenfoot.setWorld(new AchievementZone());
+        }
+        
+        if(Greenfoot.isKeyDown("I")) // Lets the player see the instructions
+        {
+            Greenfoot.setWorld(new InstructionWorld());
         }
     }
 
