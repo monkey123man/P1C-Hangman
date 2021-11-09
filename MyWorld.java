@@ -85,7 +85,7 @@ public class MyWorld extends World
         Label guess = new Label("Guesses!", 85);
         addObject(guess, 820, 50);
         int randomInt = (int)Math.floor(Math.random()*(max-min+1)+min); //This creates a random number
-        randomWord = "hello";//allWords.get(randomInt); //Grabs a random word from the arraylist
+        randomWord = allWords.get(randomInt); //Grabs a random word from the arraylist
         //allWords.get(randomInt);
         //Massive for-loop grabs each character in the word, converts it to a string, and adds it to the hashmap. If it already exists in the hashmap,
         //it bumps the value by 1 in the hashmap and it adds an underscore.
