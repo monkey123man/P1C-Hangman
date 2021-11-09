@@ -20,7 +20,7 @@ public class MyWorld extends World
     public ArrayList<String> allWords; //Arraylist to hold the words in the wordlist
     public ArrayList<String> alphabet = new ArrayList<String>(); //rraylist to hold the alphabet
     ArrayList<String> letterArray = new ArrayList<String>();//This arraylist holds the entered letters
-    public int max = 2334; //Maximum word entry to find in the allWords arraylist (essentially the word count)
+    public int max = 2327; //Maximum word entry to find in the allWords arraylist (essentially the word count)
     public int min = 0; //Minium word entry to find in the allWords arraylist
     public int underx = 35; //Base x coordinates for underlines
     public int undery = 400; //Base y coordinate for underlines
