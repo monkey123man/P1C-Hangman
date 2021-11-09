@@ -19,10 +19,15 @@ public class TitleScreen extends World
         super(1000, 700, 1); 
         Label start = new Label("Click anywhere or press <space> to begin!", 50);
         start.setLineColor(Color.BLUE);
-        addObject(start, 500, 600);
+        addObject(start, 500, 550);
         
-        Button begin = new Button();
+        Label achieve = new Label("Press <A> to see unlocked Achievements!", 40);
+        addObject(achieve, 500, 600);
+        achieve.setLineColor(Color.RED);
+
+        PlayButton begin = new PlayButton();
         addObject(begin, 500, 350);
+
     }
     public void act()
     {
@@ -32,5 +37,11 @@ public class TitleScreen extends World
             world.health = 0;
             Greenfoot.setWorld(world);
         }
+        
+        if(Greenfoot.isKeyDown("A"))
+        {
+            Greenfoot.setWorld(new AchievementZone());
+        }
     }
+
 }
