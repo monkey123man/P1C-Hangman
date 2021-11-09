@@ -1,16 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 import java.util.*;
-import java.util.List;
 /**
- * Write a description of class MyWorld here.
+ * The main stage of the hangman game. This is where
+ * the player will be guessing words, with the life
+ * of the HangMan on the line. This class holds all 
+ * the code which deals with placement of all the 
+ * objects, reading the users inputs, and deciding
+ * if the player won the game or lost the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Aninda, Conrad
+ * Nov 9, 2021
  */
 public class MyWorld extends World
 {
-    public static int health = 0;
+    public static int health = 0; // The main health variable which updates the hangman and also limits the players guesses
     public int letterX = 675;
     public int letterY = 115;
     public ArrayList<String> allWords;
@@ -22,20 +26,23 @@ public class MyWorld extends World
     public int undery = 400;
     public int correctletterX = 35;
     public String randomWord;
-    public static boolean loss;
-    public static String wordToGuess ="";
+    
     HashMap<String, Integer> letters = new HashMap<String, Integer>();
     public int numGuesses = 0;
     public int guessesHeight = 0;
-
+    
+    public static boolean loss; // This boolean is true if the player loses and false if they win
+    public static String wordToGuess =""; // A variable to access the word the player was guessing
+    
+    // Achievement variables
     public static boolean achievement1;
-    public static int numWins = 0;
+    public static int numWins = 0; // counts number of wins
     public static boolean achievement2;
-    public static boolean a2Done;
-    public static int achievement2Count = 0;
+    public static boolean a2Done; // Prevents achievement2's value from changing if it is already done
+    public static int achievement2Count = 0; // Adds to this if the wins are consecutive
     public static boolean achievement3;
-    public static boolean a3Done;
-    public static int healthCheck;
+    public static boolean a3Done;// Prevents achievement3's value from changing if it is already done
+    public static int healthCheck; // To save and allow access of the value of health at the end of the game
     
     /**
      * Constructor for objects of class MyWorld.
@@ -45,7 +52,9 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1);
-        alphabet.add("A"); //Adds the alphabet to the arraylist
+        
+        //Adds the alphabet to the arraylist
+        alphabet.add("A"); 
         alphabet.add("B");
         alphabet.add("C");
         alphabet.add("D");
@@ -71,6 +80,7 @@ public class MyWorld extends World
         alphabet.add("X");
         alphabet.add("Y");
         alphabet.add("Z");
+        // Defines arraylist which contains all the words from the inserting url in Words class
         allWords = new ArrayList<String>();
         try
         {
@@ -80,18 +90,23 @@ public class MyWorld extends World
         {
 
         }
+        
+        // Adds the hangman to the world in the upper left corner where the stage is
         HangMan guy = new HangMan();
         addObject(guy, 310, 190);
+        // Below this label are where the player guesses will be
         Label guess = new Label("Guesses!", 85);
         addObject(guess, 820, 50);
+        
         int randomInt = (int)Math.floor(Math.random()*(max-min+1)+min); //This creates a random number
         randomWord = allWords.get(randomInt); //Grabs a random word from the arraylist
-        //allWords.get(randomInt);
-        //Massive for-loop grabs each character in the word, converts it to a string, and adds it to the hashmap. If it already exists in the hashmap,
-        //it bumps the value by 1 in the hashmap and it adds an underscore.
-        //For characters that arent letters, it just puts whatever it is, ex. a hyphen
-        //Everything in the arraylist is a single word so no need to implement multiword stuff (we need to add multiline anyways for the super long words
-        //such as "father-in-law"
+        //  allWords.get(randomInt);
+        // Massive for-loop grabs each character in the word, converts it to a string,
+        // and adds it to the hashmap. If it already exists in the hashmap,
+        // it bumps the value by 1 in the hashmap and it adds an underscore.
+        // For characters that arent letters, it just puts whatever it is, ex. a hyphen
+        // Everything in the arraylist is a single word so no need to implement multiword stuff 
+        // (we need to add multiline anyways for the super long words such as "father-in-law"
         for (int i = 0; i < randomWord.length(); i++){
             char cur = randomWord.charAt(i); //Grabs each character
             if (Character.isLetter(cur)){
@@ -126,8 +141,6 @@ public class MyWorld extends World
         //Runs the keyPresses method
         keyPresses();
         if (letters.isEmpty()){
-            //TitleScreen titlescreen = new TitleScreen();
-            //Greenfoot.setWorld(titlescreen);
             loss = false;
             wordToGuess = randomWord;
             healthCheck = health;
@@ -169,22 +182,21 @@ public class MyWorld extends World
                             else{
                                 letters.put(currentLowercaseLetter, currentKeys);
                             }
-                            correctBool = true;
+                            correctBool = true; // is true if the guessed letter is in the word
                         }
                     }
                     Label newGuess = new Label(currentLetter, 60);
-                    if(correctBool)
+                    if(correctBool) // Correct guess
                     {
-                        newGuess.setFillColor(Color.GREEN);
-                        
+                        newGuess.setFillColor(Color.GREEN); // Sets the colour of the guess to green
                     }
-                    else
+                    else // Incorrect guess
                     {
-                        newGuess.setFillColor(Color.RED);
-                        
+                        newGuess.setFillColor(Color.RED); // Sets the colour of the guess to red
                     }
 
-                    if (numGuesses > 5){
+                    if (numGuesses > 5) // begins a new row once the number of guesses exceeds 5
+                    {
                         guessesHeight++;
                         letterY = 115 + 50 * guessesHeight;
                         numGuesses = 0;
@@ -193,18 +205,19 @@ public class MyWorld extends World
                     addObject(newGuess, letterX, letterY);
                     letterArray.add(currentLetter);
                     numGuesses++;
-                    if (correctBool == false){
+                    if (!correctBool) // If the answer was wrong, add to health
+                    {
                         health++;
                     }
                 }
             }
         }
-        if(health == 6)
+        if(health == 6) // When the health is 6
         {
-            loss = true;
-            wordToGuess = randomWord;
-            healthCheck = health;
-            Greenfoot.setWorld(new EndScreen());
+            loss = true; // The player loses
+            wordToGuess = randomWord; // Saves the word that the player was guessing
+            healthCheck = health; // Saves the health
+            Greenfoot.setWorld(new EndScreen()); // Switches the world to EndScreen
         }
     }
 }

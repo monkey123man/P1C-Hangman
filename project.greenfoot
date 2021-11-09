@@ -1,4 +1,5 @@
 #Greenfoot project file
+class.AchievementZone.image=AchievementZone.png
 class.HangMan.image=person0.png
 class.Medal.image=medalNone.png
 class.MusicStarter.image=MusicScreen.png
@@ -69,7 +70,7 @@ editor.fx.0.height=845
 editor.fx.0.width=1097
 editor.fx.0.x=404
 editor.fx.0.y=116
-height=878
+height=1056
 package.numDependencies=20
 package.numTargets=11
 project.charset=UTF-8
@@ -164,7 +165,7 @@ target9.width=80
 target9.x=0
 target9.y=0
 version=3.0.0
-width=1550
+width=1936
 world.lastInstantiated=MusicStarter
-xPosition=312
-yPosition=54
+xPosition=0
+yPosition=0

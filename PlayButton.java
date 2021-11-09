@@ -1,10 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Button here.
+ * The PlayButton is a button which is a 1000x700
+ * pixel png. The entire image is transparent, so
+ * that when the user clicks anywhere, the world 
+ * switches to MyWorld.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Aninda, Conrad
+ * Oct 27, 2021
  */
 public class PlayButton extends Actor
 {
@@ -15,7 +18,7 @@ public class PlayButton extends Actor
     public void act() 
     {
         // Add your action code here.
-        if (Greenfoot.mousePressed(this))
+        if (Greenfoot.mousePressed(this)) // Checks for click in the world area
         {
             Greenfoot.setWorld(new MyWorld());
         }

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=HangMan
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Person\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ The\ HangMan\ class\ features\ the\ protagonist\ of\ our\r\n\ game.\ At\ first\ the\ image\ set\ is\ only\ a\ noose,\ but\r\n\ as\ the\ player\ keeps\ making\ mistakes,\ the\ picture\r\n\ updates,\ setting\ his\ body\ parts\ to\ gradually\ show\r\n\ up.\ First\ his\ head,\ then\ body,\ then\ two\ arms,\ then\r\n\ the\ legs.\ Once\ he\ is\ complete,\ the\ game\ is\ lost.\r\n\ \r\n\ Aninda,\ Conrad\ \r\n\ Oct\ 25,\ 2021\r\n
 comment1.params=
 comment1.target=HangMan()
 comment2.params=

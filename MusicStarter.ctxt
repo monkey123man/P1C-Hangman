@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=MusicStarter
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MusicStarter\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ A\ class\ with\ the\ sole\ purpose\ of\ starting\ music.\ \r\n\ By\ playing\ a\ loop\ and\ resetting\ the\ achievement\ \r\n\ boolean\ values,\ the\ game\ gets\ a\ soft\ reset\ of\ \r\n\ sorts.\ This\ class\ is\ the\ first\ starter\ class,\r\n\ yet\ it\ cannot\ be\ accessed\ without\ resetting\ the\ \r\n\ game\ to\ prevent\ multiple\ music\ loops\ playing.\r\n\ \r\n\ Aninda\ \r\n\ Nov\ 8,\ 2021\r\n
 comment1.params=
 comment1.target=MusicStarter()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MusicStarter.\r\n\ \r\n

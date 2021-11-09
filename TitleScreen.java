@@ -1,10 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TitleScreen here.
+ * The Title screen of the HangMan game. From here, the
+ * user can choose to begin playing the game, or go check
+ * the achievements they have unlocked.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Aninda, Conrad
+ * Nov 9, 2021
  */
 public class TitleScreen extends World
 {
@@ -15,7 +17,7 @@ public class TitleScreen extends World
      */
     public TitleScreen()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         Label start = new Label("Click anywhere or press <space> to begin!", 50);
         start.setLineColor(Color.BLUE);
@@ -31,14 +33,14 @@ public class TitleScreen extends World
     }
     public void act()
     {
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("space")) // Lets the player begin playing
         {
             MyWorld world = new MyWorld();
-            world.health = 0;
+            world.health = 0; // Sets the health variable to 0 to prevent conflict from previous runs
             Greenfoot.setWorld(world);
         }
         
-        if(Greenfoot.isKeyDown("A"))
+        if(Greenfoot.isKeyDown("A")) // Lets player go see their achievements
         {
             Greenfoot.setWorld(new AchievementZone());
         }

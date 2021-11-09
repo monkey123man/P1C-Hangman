@@ -1,32 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Medal here.
+ * The Medals class creates medals which
+ * are featured in the Achievement Page.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Aninda
+ * Nov 9, 2021
  */
 public class Medal extends Actor
-{
-    /**
-     * Act - do whatever the Medal wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
+{  
+    public void medalUpdate(int num)// A method that updates the image based on number parameters
     {
-        // Add your action code here.
-    }    
-    public void medalUpdate(int num)
-    {
-        if(num == 1)
+        if(num == 1) // 1 changes to bronze medal
         {
             setImage("images/medalE.png");
         }
-        if(num == 2)
+        if(num == 2) // 2 changes to silver medal
         {
             setImage("images/medalM.png");
         }
-        if(num == 3)
+        if(num == 3) // 3 changes to gold medal
         {
             setImage("images/medalH.png");
         }
