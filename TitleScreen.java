@@ -22,11 +22,11 @@ public class TitleScreen extends World
         Label start = new Label("Click anywhere or press <space> to begin!", 50);
         start.setLineColor(Color.BLUE);
         addObject(start, 500, 550);
-        
+
         Label achieve = new Label("Press <A> to see unlocked Achievements!", 40);
         addObject(achieve, 500, 600);
         achieve.setLineColor(Color.RED);
-        
+
         Label help = new Label("Press <I> to see Instructions!", 45);
         addObject(help, 500, 640);
         help.setLineColor(Color.GREEN);
@@ -36,20 +36,21 @@ public class TitleScreen extends World
         addObject(begin, 500, 350);
 
     }
+
     public void act()
     {
+        MyWorld.health = 0; // Sets health to zero to prevent conflict from previous plays
         if(Greenfoot.isKeyDown("space")) // Lets the player begin playing
         {
-            MyWorld world = new MyWorld();
-            world.health = 0; // Sets the health variable to 0 to prevent conflict from previous runs
-            Greenfoot.setWorld(world);
+
+            Greenfoot.setWorld(new MyWorld());
         }
-        
+
         if(Greenfoot.isKeyDown("A")) // Lets player go see their achievements
         {
             Greenfoot.setWorld(new AchievementZone());
         }
-        
+
         if(Greenfoot.isKeyDown("I")) // Lets the player see the instructions
         {
             Greenfoot.setWorld(new InstructionWorld());
