@@ -17,3 +17,5 @@ To play, press a key on your keyboard to guess a letter of the randomly generate
 Each wrong guess will add a body part to the hangman, while each correct guess will fill up a blank
 Guessing incorrect letters 6 times will cause the hangman to be complete, causing you to lose the game
 Guessing the word correctly, no matter how many wrong guesses, results in your win!
+There are also three hidden achievements for the user to complete, with varying difficulties
+The achivements are: Guess 5 correct words, guess 3 consecutive words, and guess no wrong letters
