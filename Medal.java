@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * The Medals class creates medals which
  * are featured in the Achievement Page.
  * 
- * Aninda
+ * Aninda, Johnson
  * Nov 9, 2021
  */
 public class Medal extends Actor
