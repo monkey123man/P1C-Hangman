@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * default, the achievements are hidden, and only show
  * themselves once the player has managed to obtain them.
  * 
- * Aninda 
+ * Aninda, Johnson, Conrad
  * Nov 9, 2021
  */
 public class AchievementZone extends World
