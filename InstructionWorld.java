@@ -2,9 +2,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class InstructionWorld here.
+ * Set the tile, and color it. Then add the object.
  * 
  * @author (your name) 
+ * Aninda, Johnson, Conrad
+ *
  * @version (a version number or a date)
+ * Nov.11, 2021
  */
 public class InstructionWorld extends World
 {
