@@ -20,20 +20,20 @@ public class TitleScreen extends World
         // Create a new world with 1000x700 cells with a cell size of 1x1 pixels.
         super(1000, 700, 1); 
         Label start = new Label("Click anywhere or press <space> to begin!", 50);
-        start.setLineColor(Color.BLUE);
-        addObject(start, 500, 550);
+        start.setLineColor(Color.BLUE); // set the color.
+        addObject(start, 500, 550); // add the object.
 
         Label achieve = new Label("Press <A> to see unlocked Achievements!", 40);
-        addObject(achieve, 500, 600);
-        achieve.setLineColor(Color.RED);
+        addObject(achieve, 500, 600); // add the object.
+        achieve.setLineColor(Color.RED); // set the color.
 
         Label help = new Label("Press <I> to see Instructions!", 45);
-        addObject(help, 500, 640);
-        help.setLineColor(Color.GREEN);
-        help.setFillColor(Color.LIGHT_GRAY);
+        addObject(help, 500, 640); // add the object.
+        help.setLineColor(Color.GREEN); // set the color.
+        help.setFillColor(Color.LIGHT_GRAY); // set the color.
 
         PlayButton begin = new PlayButton();
-        addObject(begin, 500, 350);
+        addObject(begin, 500, 350); // add the object.
 
     }
 
