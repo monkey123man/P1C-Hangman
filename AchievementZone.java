@@ -43,6 +43,7 @@ public class AchievementZone extends World
         m3 = new Label("*HARD HIDDEN*", 30);
         m3.setFillColor(Color.RED);
         
+        // add the objects with different colors.
         addObject(m1, 250, 500);
         addObject(m2, 500, 550);
         addObject(m3, 750, 500);
