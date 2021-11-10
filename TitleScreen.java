@@ -5,7 +5,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * user can choose to begin playing the game, or go check
  * the achievements they have unlocked.
  * 
- * Aninda, Conrad
+ * Aninda, Conrad, Johnson
  * Nov 9, 2021
  */
 public class TitleScreen extends World
