@@ -13,15 +13,15 @@ public class Medal extends Actor
     {
         if(num == 1) // 1 changes to bronze medal
         {
-            setImage("images/medalE.png");
+            setImage("images/medalE.png"); // Insert the image.
         }
         if(num == 2) // 2 changes to silver medal
         {
-            setImage("images/medalM.png");
+            setImage("images/medalM.png"); // Insert the image.
         }
         if(num == 3) // 3 changes to gold medal
         {
-            setImage("images/medalH.png");
+            setImage("images/medalH.png"); // Insert the image.
         }
     }
 }
