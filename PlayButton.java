@@ -4,9 +4,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * The PlayButton is a button which is a 1000x700
  * pixel png. The entire image is transparent, so
  * that when the user clicks anywhere, the world 
- * switches to MyWorld.
+ * will switch to MyWorld.
  * 
- * Aninda, Conrad
+ * Aninda, Conrad, Johnson
  * Oct 27, 2021
  */
 public class PlayButton extends Actor
