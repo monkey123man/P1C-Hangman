@@ -30,6 +30,7 @@ public class Label extends Actor
     
     /**
      * Create a new label, initialise it with the needed text and the font size 
+     * and update the image.
      */
     public Label(String value, int fontSize)
     {
@@ -39,7 +40,7 @@ public class Label extends Actor
     }
 
     /**
-     * Sets the value  as text
+     * Sets the value  as text and update the image.
      * 
      * @param value the text to be show
      */
@@ -50,7 +51,7 @@ public class Label extends Actor
     }
     
     /**
-     * Sets the value as integer
+     * Sets the value as integer and update the image.
      * 
      * @param value the value to be show
      */
@@ -61,7 +62,7 @@ public class Label extends Actor
     }
     
     /**
-     * Sets the line color of the text
+     * Sets the line color of the text and update the image.
      * 
      * @param lineColor the line color of the text
      */
@@ -72,7 +73,7 @@ public class Label extends Actor
     }
     
     /**
-     * Sets the fill color of the text
+     * Sets the fill color of the text and update the image.
      * 
      * @param fillColor the fill color of the text
      */
