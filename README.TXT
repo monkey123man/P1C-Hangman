@@ -6,7 +6,7 @@ all he/she needs to know. The comments should usually include at least:
 
 PROJECT TITLE: Hangman
 PURPOSE OF PROJECT: To be a fun word-based game, implemented using multiple data structures in our code.
-VERSION or DATE: Nov 8, 2021
+VERSION or DATE: Nov 9, 2021
 HOW TO START THIS PROJECT: Press the play/run button
 AUTHORS: Conrad Mo, Aninda Saha, Johnson Zhuo Chen
 USER INSTRUCTIONS: 
