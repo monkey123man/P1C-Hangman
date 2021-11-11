@@ -7,7 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * achievements, and lets the player play again or
  * go back to the title screen.
  * 
- * Aninda, Johnson
+ * Aninda
  * Nov 9, 2021
  */
 public class EndScreen extends World
@@ -63,7 +63,7 @@ public class EndScreen extends World
                 MyWorld.achievement2Count = 0; // Sets count of wins for a2 to 0, as it requires consecutive wins
             }
         }
-        else if (game.win)// If the player won
+        else // If the player won
         {
             setBackground(win);
             answer = new Label("You guessed " + game.wordToGuess + " correctly!", 60);
@@ -79,7 +79,7 @@ public class EndScreen extends World
 
         if(game.numWins >= 5) // Finishes achievement 1
         {
-            game.achievement1 = true; // return the first achievement.
+            game.achievement1 = true;
         }
         if(game.healthCheck == 0 && !game.a3Done) // If the 3rd achievement isnt done and the health value is 0
         {

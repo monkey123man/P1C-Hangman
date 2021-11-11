@@ -35,7 +35,7 @@ public class Stack<E> implements Iterable<E>
     public Iterator<E> iterator() {
         return new MyIterator();
     }
-    public class MyIterator implements Iterator<E> {
+    class MyIterator implements Iterator<E> {
 
         private Node n = first;
 
